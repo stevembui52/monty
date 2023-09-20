@@ -5,6 +5,7 @@
  * @head: Reference to the head of doubly linked list
  * @num_line: Reference to the line with an error
  */
+
 void op_push(stack_t **head, unsigned int num_line)
 {
 	int number = 0;
@@ -12,8 +13,7 @@ void op_push(stack_t **head, unsigned int num_line)
 
 	if (!vars.stack)
 	{
-		fprintf(stderr, "L%u: ", num_line);
-		fprintf(stderr, "%u usage: push integer\n", num_line);
+		fprintf(stderr, "L%u usage: push integer\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
@@ -22,8 +22,7 @@ void op_push(stack_t **head, unsigned int num_line)
 	{
 		if ((!(isdigit(vars.stack[x]))) && vars.stack[x] != '-')
 		{
-			fprintf(stderr, "L%u: ", num_line);
-			fprintf(stderr, "usage: push integer\n");
+			fprintf(stderr, "L%u usage: push integer\n", num_line);
 			free_vars();
 			exit(EXIT_FAILURE);
 		}
@@ -35,6 +34,7 @@ void op_push(stack_t **head, unsigned int num_line)
 	else
 		add_dnodeint_end(head, number);
 }
+
 
 /**
  * op_pall - this function print all values on the doubly linked list
@@ -60,17 +60,7 @@ void op_pall(stack_t **head, unsigned int num_line)
  * @head: reference to the head of doubly linked list
  * @num_line: reference to line number if there is an error
  * Return: no return
- *
-void op_pint(stack_t **head, unsigned int num_line)
-{
-	if (*head == NULL)
-	{
-		fprintf(stderr, "L%u can't pint, stack empty\n", num_line);
-		free(vars.buffer);
-		exit(EXIT_FAILURE);
-	}
-	printf("%d\n", (*head)->n);
-}*/
+ */
 void op_pint(stack_t **head, unsigned int num_line)
 {
 	if (*head == NULL)
