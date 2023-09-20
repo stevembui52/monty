@@ -65,7 +65,7 @@ void op_pint(stack_t **head, unsigned int num_line)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "%u can't pint, stack empty\n", num_line);
+		fprintf(stderr, "L%u can't pint, stack empty\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
