@@ -18,13 +18,13 @@ void op_div(stack_t **head, unsigned int num_line)
 	}
 	if (nel < 2)
 	{
-		dprintf(2, "L%u: can't div, stack too short\n", num_line);
+		fprintf(stderr, "L%u: can't div, stack too short\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
 	if ((*head)->n == 0)
 	{
-		dprintf(2, "L%d: division by zero\n", num_line);
+		fprintf(stderr, "L%d: division by zero\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
@@ -47,7 +47,7 @@ void op_mul(stack_t **head, unsigned int num_line)
 
 	if (!head || !(*head) || !(*head)->next)
 	{
-		dprintf(2, "L%u: can't mul, stack too short\n", num_line);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
@@ -76,13 +76,13 @@ void op_mod(stack_t **head, unsigned int num_line)
 	}
 	if (nel < 2)
 	{
-		dprintf(2, "L%u: can't mod, stack too short\n", num_line);
+		fprintf(stderr, "L%u: can't mod, stack too short\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
 	if ((*head)->n == 0)
 	{
-		dprintf(2, "L%d: division by zero\n", num_line);
+		fprintf(stderr, "L%d: division by zero\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
@@ -100,13 +100,13 @@ void op_pchar(stack_t **head, unsigned int num_line)
 {
 	if (head == NULL || *head == NULL)
 	{
-		dprintf(2, "L%u: can't pchar, stack empty\n", num_line);
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
 	if ((*head)->n < 0 || (*head)->n >= 128)
 	{
-		dprintf(2, "L%u: can't pchar, value out of range\n", num_line);
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}

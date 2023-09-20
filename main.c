@@ -27,8 +27,8 @@ int main(int argc, char **argv)
 			j = get_operation(args[0]);
 			if (!j)
 			{
-				dprintf(2, "L%u: ", vars.count_line);
-				dprintf(2, "unknown instruction %s\n", args[0]);
+				fprintf(stderr, "L%u: ", vars.count_line);
+				fprintf(stderr, "unknown instruction %s\n", args[0]);
 				free_vars();
 				exit(EXIT_FAILURE);
 			}

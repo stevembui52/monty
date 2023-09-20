@@ -12,8 +12,8 @@ void op_push(stack_t **head, unsigned int num_line)
 
 	if (!vars.stack)
 	{
-		dprintf(2, "L%u: ", num_line);
-		dprintf(2, "usage: push integer\n");
+		fprintf(stderr, "L%u: ", num_line);
+		fprintf(stderr, "%u usage: push integer\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
@@ -22,8 +22,8 @@ void op_push(stack_t **head, unsigned int num_line)
 	{
 		if ((!(isdigit(vars.stack[x]))) && vars.stack[x] != '-')
 		{
-			dprintf(2, "L%u: ", num_line);
-			dprintf(2, "usage: push integer\n");
+			fprintf(stderr, "L%u: ", num_line);
+			fprintf(stderr, "usage: push integer\n");
 			free_vars();
 			exit(EXIT_FAILURE);
 		}
@@ -65,8 +65,8 @@ void op_pint(stack_t **head, unsigned int num_line)
 {
 	if (*head == NULL)
 	{
-		dprintf(2, "L%u: ", num_line);
-		dprintf(2, "can't pint, stack empty\n");
+		fprintf(stderr, "L%u: ", num_line);
+		fprintf(stderr, "%u can't pint, stack empty\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
@@ -85,7 +85,7 @@ void op_pop(stack_t **head, unsigned int num_line)
 
 	if (head == NULL || *head == NULL)
 	{
-		dprintf(2, "L%u: can't pop an empty stack\n", num_line);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
@@ -114,7 +114,7 @@ void op_swap(stack_t **head, unsigned int num_line)
 	}
 	if (lvl < 2)
 	{
-		dprintf(2, "L%u: can't swap, stack too short\n", num_line);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}

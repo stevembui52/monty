@@ -18,7 +18,7 @@ void op_add(stack_t **head, unsigned int num_line)
 	}
 	if (nel < 2)
 	{
-		dprintf(2, "L%u: can't add, stack too short\n", num_line);
+		fprintf(stderr, "L%u: can't add, stack too short\n", num_line);
 		free_vars();
 		exit(EXIT_FAILURE);
 	}
