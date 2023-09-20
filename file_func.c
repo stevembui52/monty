@@ -4,7 +4,7 @@
  * init - initialize all variables into the struct global_t
  * and keep values while the program finish
  * @fd: - file descriptor of file opened
- * Return: No return
+ * Return: No return.
  */
 void init(FILE *fd)
 {
