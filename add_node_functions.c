@@ -2,7 +2,7 @@
 /**
  * add_dnodeint - add a node into a doubly linked list
  * @head: Pointer to the reference of first node
- * @n: number to add into doubly linked list
+ * @n: number to add into doubly linked list.
  * Return: pointer with the reference to the new node
  */
 stack_t *add_dnodeint(stack_t **head, const int n)
