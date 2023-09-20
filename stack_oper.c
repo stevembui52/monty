@@ -60,19 +60,29 @@ void op_pall(stack_t **head, unsigned int num_line)
  * @head: reference to the head of doubly linked list
  * @num_line: reference to line number if there is an error
  * Return: no return
- */
+ *
 void op_pint(stack_t **head, unsigned int num_line)
 {
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%u can't pint, stack empty\n", num_line);
-		free_vars();
+		free(vars.buffer);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*head)->n);
+}*/
+void op_pint(stack_t **head, unsigned int num_line)
+{
+	if (*head == NULL)
+	{
+		fprintf(stderr, "L%u: can't pint, stack empty\n", num_line);
 		fclose(vars.fd);
+		free(vars.buffer);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*head)->n);
 }
-
 /**
  * op_pop - removes only the top element of the doubly linked list
  * @head: reference to the head of doubly linked list
