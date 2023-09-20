@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * op_add - adds only the top two elements of the stack
+ * op_add - adds only the top two elements of the stack.
  * @head: Reference to the head of doubly linked list
  * @num_line: Reference to the line we are checking in case of an error
  */
