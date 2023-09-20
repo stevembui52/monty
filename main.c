@@ -3,7 +3,7 @@
 global_t vars;
 /**
  * main - this function evaluates the input to execute the
- * functions
+ * functions.
  * @argc: Counter of arguments
  * @argv: Pointer to arguments
  * Return: EXIT_SUCCESS or EXIT_FAILURE
